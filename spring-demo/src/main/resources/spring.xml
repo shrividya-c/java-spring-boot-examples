@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="alien1" class="com.demo.Alien" autowire="byName">
+<!--        constructor injection (order of execution - sequence(by default), type of variable, index of variable, name of variable defined in class-->
+<!--        <constructor-arg index = "0" value="30"/>-->
+<!--        <constructor-arg index= "1" ref="lap"/>-->
+
+<!--        setter injection-->
+<!--       <property name="age" value="26"></property>-->
+<!--        <property name="laptop" ref="lap"></property> &lt;!&ndash; setter injection using ref attribute - autowire&ndash;&gt;-->
+
+<!--        autowire example - byName, byType(primary)-->
+        <property name="age" value="30"/>
+<!--        <property name="computer" ref="lap"/>-->
+
+<!--        inner bean-->
+<!--        <property name="computer">-->
+<!--            <bean class="com.demo.Desktop" lazy-init="true"/>-->
+<!--        </property>-->
+    </bean>
+<!--    <bean id="alien2" class="com.demo.Alien" scope = "prototype"></bean>-->
+    <bean id="lap" class="com.demo.Laptop"/>
+    <bean id="computer" class="com.demo.Desktop" lazy-init="true"/>
+</beans>
